@@ -1,0 +1,24 @@
+﻿@page "{id:int}"
+@model RazorPagesContacts.Pages.EditModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Edit Transaction";
+}
+
+<h1>Edit Transaction - @Model.Transaction.Id</h1>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Transaction.Id" type="hidden" />
+    <div>
+        <label asp-for="Transaction.Name"></label>
+        <div>
+            <input asp-for="Transaction.Name" />
+            <span asp-validation-for="Transaction.Name" ></span>
+        </div>
+    </div>
+ 
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
